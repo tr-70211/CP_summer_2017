@@ -34,6 +34,7 @@ public class Hello {
         System.out.println(d3);
 
         Float f1 = new Double(d3).floatValue();
+        // create a new double and turn it into a float
         f1 = new Integer(b).floatValue();
 
         System.out.println(f1);
