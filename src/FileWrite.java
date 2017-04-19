@@ -12,7 +12,7 @@ public class FileWrite {
     public static void main(String[] args){
         File newFile = new File("E:/newfile.txt");
         try{
-            FileWriter fw = new FileWriter(newFile);
+            FileWriter fw = new FileWriter(newFile, true);
             BufferedWriter bw =new BufferedWriter (fw);
             bw.write("abcdef");
             bw.newLine();
@@ -20,15 +20,11 @@ public class FileWrite {
             bw.newLine();
             bw.append("3rd line");
             bw.close();
+            fw.close();
 
         } catch (IOException e){
             e.printStackTrace();
         }
-
-
-
-
-
 
     }
 

@@ -10,7 +10,7 @@ public class Arrays {
         arInt[0] = 5;
         arInt[1] = 7;
 
-        for (int i=0; i<arInt.length;i++) {
+        for (int i = 0; i < arInt.length; i++) {
             System.out.println(arInt[i]);
         }
 
@@ -18,12 +18,13 @@ public class Arrays {
                 "abc", "def", "ghi"
         };
 
-        for (int j=0;j<arStr.length;j++){
+        for (int j = 0; j < arStr.length; j++) {
             System.out.println(arStr[j]);
         }
 
-        for (String el: arStr) {
-            System.out.println("foreach " +el);
+	    //for each
+        for (String el : arStr) {
+            System.out.println("foreach: " +el);
         }
 
     }
