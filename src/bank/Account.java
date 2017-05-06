@@ -10,6 +10,15 @@ public class Account {
     private Long accountID;
     private Customer customer; //the account will hold a reference to customer
     private BigDecimal balance;
+    private String currency;
+
+
+    public Account(Long accountId, Customer customer, String currency) {
+        this.accountID = accountId;
+        this.customer = customer;
+        this.balance = new BigDecimal(0);
+        this.currency = currency;
+    }
 
     public Long getAccountID() {
         return accountID;
@@ -35,9 +44,18 @@ public class Account {
         this.balance = balance;
     }
 
-    public Account(Long accountID, Customer customer) {
-        this.accountID = accountID;
-        this.customer = customer;
-        this.balance = new BigDecimal(0);
+    public String getCurrency() {
+        return currency;
     }
+
+    @Override
+    public String toString() {
+        return "\n" + this.getClass().getSimpleName()
+                .replace("Account", "") + "{" +
+                "id=" + accountID +
+                ", cust=" + customer.getCustomerId() +
+                ", " + currency + " " + balance +
+                '}';
+    }
+
 }
