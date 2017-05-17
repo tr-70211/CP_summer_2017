@@ -1,10 +1,10 @@
 package bank;
 
 /**
- * Created by Pantho on 2017-04-19.
+ * Created by prubac on 4/19/2017.
  */
 public class DebitAccount extends Account {
-    public DebitAccount(Long accountID, Customer customer, String currency) {
-        super(accountID, customer, currency);
+    public DebitAccount(Long accountId, Customer customer, String currency) {
+        super(accountId, customer, currency);
     }
 }

@@ -14,6 +14,7 @@ public class TextFileRead {
         System.out.println(input);
         */
 
+
         File myFile = new File("E:\\docu.txt");
         try (Scanner scanner = new Scanner(myFile)) {
             int i = 0;

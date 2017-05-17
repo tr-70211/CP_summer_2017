@@ -46,7 +46,6 @@ public class WordCount {
         for (String s : wordcount.keySet()) {
             System.out.println("Count of: "+ s+"        \t\t\t\t\t\t\t"+wordcount.get(s));
         }
-
     }
 //QUESTION: how would I make certain parts/checks into sub?functions (in the same class) which I could call upon
 }

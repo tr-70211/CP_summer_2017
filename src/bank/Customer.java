@@ -1,14 +1,20 @@
 package bank;
 
 /**
- * Created by Pantho on 2017-04-19.
+ * Created by prubac on 4/19/2017.
  */
 public class Customer {
 
     private Long customerId;
-    private String firstname; private String lastname;
+    private String firstName;
+    private String lastName;
 
-    //getter and setter reads or stores parameters in the field
+    public Customer(Long customerId, String firstName, String lastName) {
+        this.customerId = customerId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public Long getCustomerId() {
         return customerId;
     }
@@ -17,34 +23,28 @@ public class Customer {
         this.customerId = customerId;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "customerId=" + customerId +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
+        return "\nCust{" +
+                "id=" + customerId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 '}';
-    }
-
-    public Customer(Long customerId, String firstname, String lastname) {
-        this.customerId = customerId;
-        this.firstname = firstname;
-        this.lastname = lastname;
     }
 }

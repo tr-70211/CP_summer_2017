@@ -24,7 +24,7 @@ public class Arrays {
 
 	    //for each
         for (String el : arStr) {
-            System.out.println("foreach: " +el);
+            System.out.print("foreach: " +el);
         }
 
     }

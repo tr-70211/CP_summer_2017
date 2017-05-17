@@ -3,29 +3,41 @@ package bank;
 import java.math.BigDecimal;
 
 /**
- * Created by Pantho on 2017-04-19.
+ * Created by prubac on 4/19/2017.
  */
-public class Account {
-    //this is to be an abstract class. the idea is to have a savings account and a deposit account
-    private Long accountID;
-    private Customer customer; //the account will hold a reference to customer
+public abstract class Account {
+
+    private Long accountId;
+    private Customer customer;
     private BigDecimal balance;
     private String currency;
 
-
     public Account(Long accountId, Customer customer, String currency) {
-        this.accountID = accountId;
+        this.accountId = accountId;
         this.customer = customer;
         this.balance = new BigDecimal(0);
         this.currency = currency;
     }
 
-    public Long getAccountID() {
-        return accountID;
+    public void charge(BigDecimal amount) {
+        if (amount.compareTo(new BigDecimal(0))<=0)
+            return;
+        if (getBalance().compareTo(amount)<0) return;
     }
 
-    public void setAccountID(Long accountID) {
-        this.accountID = accountID;
+    public void deposit(BigDecimal amount) {
+        if (amount.compareTo(new BigDecimal(0))<=0)
+            return;
+        setBalance(getBalance().add(amount));
+    }
+
+
+    public Long getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(Long accountId) {
+        this.accountId = accountId;
     }
 
     public Customer getCustomer() {
@@ -48,14 +60,17 @@ public class Account {
         return currency;
     }
 
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
     @Override
     public String toString() {
         return "\n" + this.getClass().getSimpleName()
                 .replace("Account", "") + "{" +
-                "id=" + accountID +
+                "id=" + accountId +
                 ", cust=" + customer.getCustomerId() +
                 ", " + currency + " " + balance +
                 '}';
     }
-
 }
